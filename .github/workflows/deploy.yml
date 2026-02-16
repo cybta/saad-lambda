@@ -32,7 +32,16 @@ jobs:
 
       - name: Zip and Deploy
         run: |
+          # 1. Copy package files to the build folder
+          cp package.json package-lock.json ./dist/
+
+          # 2. Go into dist and install ONLY production dependencies
           cd dist
+          npm install --omit=dev
+
+          # 3. Zip everything inside dist (code + node_modules)
           zip -r ../function.zip .
           cd ..
+
+          # 4. Push to AWS
           aws lambda update-function-code --function-name saad-lambda --zip-file fileb://function.zip
