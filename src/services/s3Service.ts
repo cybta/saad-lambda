@@ -6,10 +6,16 @@ const BUCKET_NAME = 'saad-api';
 export const getJsonFromS3 = async (filePath: string) => {
   const command = new GetObjectCommand({
     Bucket: BUCKET_NAME,
-    Key: filePath, // e.g., 'useful-links/personal.json'
+    Key: filePath,
   });
 
-  const response = await s3.send(command);
-  const data = await response.Body?.transformToString();
-  return data ? JSON.parse(data) : null;
+  try {
+    const response = await s3.send(command);
+    // SDK v3 requires transformToString to read the stream
+    const data = await response.Body?.transformToString();
+    return data ? JSON.parse(data) : null;
+  } catch (error: any) {
+    console.error(`S3 Error [${filePath}]:`, error.message);
+    throw error;
+  }
 };
