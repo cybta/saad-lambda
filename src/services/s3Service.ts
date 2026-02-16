@@ -15,7 +15,6 @@ export const getJsonFromS3 = async (filePath: string) => {
     const data = await response.Body?.transformToString();
     return data ? JSON.parse(data) : null;
   } catch (error: any) {
-    console.error(`S3 Error [${filePath}]:`, error.message);
     throw error;
   }
 };

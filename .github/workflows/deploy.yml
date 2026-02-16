@@ -30,18 +30,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Build TypeScript
+        run: npx tsc
+
       - name: Zip and Deploy
         run: |
-          # 1. Copy package files to the build folder
+          # 1. Copy package files INTO the dist folder
           cp package.json package-lock.json ./dist/
 
-          # 2. Go into dist and install ONLY production dependencies
+          # 2. Install production dependencies inside dist
           cd dist
           npm install --omit=dev
 
-          # 3. Zip everything inside dist (code + node_modules)
+          # 3. Zip the CONTENTS of dist
           zip -r ../function.zip .
           cd ..
 
-          # 4. Push to AWS
+          # 4. Upload to AWS
           aws lambda update-function-code --function-name saad-lambda --zip-file fileb://function.zip
