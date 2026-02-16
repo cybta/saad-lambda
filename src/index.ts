@@ -1,4 +1,3 @@
-// 1. Change the import to V2
 import type {
   Handler,
   APIGatewayProxyEventV2,
@@ -7,17 +6,16 @@ import type {
 import { getPersonalLinks } from './modules/useful-links/personal.js';
 import { getWorkLinks } from './modules/useful-links/work.js';
 
-// 2. Update the handler types to V2
 export const handler: Handler<
   APIGatewayProxyEventV2,
   APIGatewayProxyResultV2
 > = async (event) => {
-  // 3. Now 'rawPath' will be recognized by TypeScript
   const path = event.rawPath;
 
   try {
     let result;
 
+    // Routing logic
     if (path.endsWith('/useful-links/personal')) {
       result = await getPersonalLinks();
     } else if (path.endsWith('/useful-links/work')) {
@@ -31,15 +29,19 @@ export const handler: Handler<
 
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*', // Crucial for frontend access
+      },
       body: JSON.stringify(result),
     };
   } catch (error: any) {
+    console.error('Lambda Runtime Error:', error);
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: `Error: ${error.message}`,
-        error: error.message,
+        message: 'Internal Server Error',
+        details: error.message,
       }),
     };
   }
