@@ -38,7 +38,7 @@ export const handler: Handler<
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'Internal Server Error',
+        message: `Error: ${error.message}`,
         error: error.message,
       }),
     };
