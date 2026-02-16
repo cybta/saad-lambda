@@ -4,7 +4,7 @@ export const handler: Handler = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Hello from Saad-Lambda in TypeScript!',
+      message: 'Hello from the Saad API in TypeScript!',
       input: event,
     }),
   };
