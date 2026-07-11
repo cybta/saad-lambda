@@ -8,6 +8,8 @@ const USEFUL_LINKS_RESOURCE_ID = 's1jwz9';
 const LAMBDA_ARN = 'arn:aws:lambda:us-east-1:759166090310:function:saad-lambda';
 const STAGE_NAME = 'prod';
 
+const TRANSLATE_CATEGORIES = ['electricTools', 'fasteners', 'gardeningTools', 'wood', 'woodWorkingTools'];
+
 export class SaadApiStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps) {
     super(scope, id, props);
@@ -27,23 +29,28 @@ export class SaadApiStack extends Stack {
       sameEnvironment: true,
     });
 
-    // New route: /useful-links/3d-printing
-    const threeDPrintingResource = usefulLinksResource.addResource('3d-printing');
-
-    const getMethod = threeDPrintingResource.addMethod('GET', new apigateway.LambdaIntegration(existingLambda));
-
-    const corsOptions = threeDPrintingResource.addCorsPreflight({
-      allowOrigins: ['*'],
-      allowMethods: ['GET', 'OPTIONS'],
-    });
-
     // A fresh deployment is required to push new routes live on the existing "prod" stage.
     // addToLogicalId ties this Deployment's physical identity to the methods it serves, so
-    // future routes added the same way automatically produce a new deployment on `cdk deploy`.
+    // adding a route via addGetRoute below automatically produces a new deployment on `cdk deploy`.
     const deployment = new apigateway.Deployment(this, 'Deployment', { api: existingApi });
-    deployment.node.addDependency(getMethod);
-    deployment.node.addDependency(corsOptions);
-    deployment.addToLogicalId({ method: getMethod.methodId });
+
+    const addGetRoute = (pathPart: string) => {
+      const resource = usefulLinksResource.addResource(pathPart);
+      const getMethod = resource.addMethod('GET', new apigateway.LambdaIntegration(existingLambda));
+      const corsOptions = resource.addCorsPreflight({
+        allowOrigins: ['*'],
+        allowMethods: ['GET', 'OPTIONS'],
+      });
+      deployment.node.addDependency(getMethod);
+      deployment.node.addDependency(corsOptions);
+      deployment.addToLogicalId({ method: getMethod.methodId });
+    };
+
+    addGetRoute('3d-printing');
+    addGetRoute('translate');
+    for (const category of TRANSLATE_CATEGORIES) {
+      addGetRoute(category);
+    }
 
     // The one live resource this stack adopts via `cdk import`, so it can flip
     // the "prod" stage over to the new deployment without recreating it.
