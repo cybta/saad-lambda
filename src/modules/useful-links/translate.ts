@@ -1,4 +1,4 @@
-import { getJsonFromS3 } from '../../services/s3Service.js';
+import { getJsonFromS3, appendJsonItem } from '../../services/s3Service.js';
 
 export const TRANSLATE_CATEGORIES = [
   'electricTools',
@@ -19,4 +19,11 @@ export const getAllTranslations = async () => {
     TRANSLATE_CATEGORIES.map(async (category) => [category, await getTranslateCategory(category)] as const)
   );
   return Object.fromEntries(entries);
+};
+
+export const addTranslateItem = async (
+  category: TranslateCategory,
+  item: { en: string; ru: string; info: string }
+) => {
+  return await appendJsonItem(`useful-links/translate/${category}.json`, 'en', item);
 };
