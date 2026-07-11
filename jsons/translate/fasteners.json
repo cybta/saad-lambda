@@ -1,0 +1,92 @@
+[
+  {
+    "id": "wood-screw",
+    "en": "wood screw",
+    "ru": "саморез по дереву",
+    "info": "Threaded fastener with a sharp point designed to grip wood fibers tightly."
+  },
+  {
+    "id": "bolt",
+    "en": "bolt",
+    "ru": "болт",
+    "info": "Mechanical fastener with a threaded shaft, usually secured with a nut."
+  },
+  {
+    "id": "hex-nut",
+    "en": "hex nut",
+    "ru": "гайка",
+    "info": "Six-sided internal threaded fastener that mates with a bolt to clamp parts together."
+  },
+  {
+    "id": "washer",
+    "en": "washer",
+    "ru": "шайба",
+    "info": "Thin plate with a hole used to distribute the load of a threaded fastener."
+  },
+  {
+    "id": "dowel",
+    "en": "dowel",
+    "ru": "дюбель",
+    "info": "Wall plug inserted into a drilled hole to allow screws to hold securely in drywall or masonry."
+  },
+  {
+    "id": "rod",
+    "en": "rod",
+    "ru": "стержень",
+    "info": "A straight, solid cylindrical bar used as a structural support, linkage, or guide."
+  },
+  {
+    "id": "threaded-rod",
+    "en": "threaded rod",
+    "ru": "резьбовой стержень",
+    "info": "A relatively long rod that is threaded on both ends or along its entire length, often called a stud."
+  },
+  {
+    "id": "nut",
+    "en": "nut",
+    "ru": "гайка",
+    "info": "A type of fastener with a threaded hole, used in conjunction with a mating bolt to fasten parts together."
+  },
+  {
+    "id": "screw",
+    "en": "screw",
+    "ru": "винт",
+    "info": "A short threaded fastener typically used to join metal parts together by screwing into a tapped hole."
+  },
+  {
+    "id": "screw-for-wood",
+    "en": "screw for wood",
+    "ru": "шуруп",
+    "info": "A tapered screw designed specifically for wood with a coarser thread to prevent stripping."
+  },
+  {
+    "id": "universal-joint",
+    "en": "universal joint",
+    "ru": "карданное соединение",
+    "info": "A joint or coupling connecting rigid rods whose axes are inclined to each other, allowing rotary motion."
+  },
+  {
+    "id": "inserts",
+    "en": "inserts",
+    "ru": "вставки",
+    "info": "General term for threaded sleeves placed into a material to provide a durable internal thread."
+  },
+  {
+    "id": "3d-print-inserts",
+    "en": "3d print inserts",
+    "ru": "вставки для 3D печати",
+    "info": "Heat-set or brass threaded inserts pressed into 3D printed plastic components to provide strong threads."
+  },
+  {
+    "id": "spacers",
+    "en": "spacers",
+    "ru": "проставки",
+    "info": "Unthreaded tubes or blocks used to create clearance or hold a precise distance between two components."
+  },
+  {
+    "id": "bearings",
+    "en": "bearings",
+    "ru": "подшипники",
+    "info": "Mechanical components that reduce friction between moving parts, typically supporting rotating shafts."
+  }
+]

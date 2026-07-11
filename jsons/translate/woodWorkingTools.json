@@ -1,0 +1,92 @@
+[
+  {
+    "id": "circular-saw",
+    "en": "circular saw",
+    "ru": "циркулярная пила",
+    "info": "Handheld or table-mounted saw used for making fast, straight cuts in wood."
+  },
+  {
+    "id": "hand-plane",
+    "en": "hand plane",
+    "ru": "рубанок",
+    "info": "Used to shave thin layers of wood off a board to flatten and smooth it."
+  },
+  {
+    "id": "wood-chisel",
+    "en": "wood chisel",
+    "ru": "стамеска",
+    "info": "A handheld tool with a sharp beveled edge used for carving, paring, and cleaning out joints."
+  },
+  {
+    "id": "mortise-chisel",
+    "en": "mortise chisel",
+    "ru": "долото",
+    "info": "A thicker, heavier chisel designed to be struck with a mallet to chop deep rectangular holes (mortises)."
+  },
+  {
+    "id": "miter-saw",
+    "en": "miter saw",
+    "ru": "торцовочная пила",
+    "info": "Specialized power tool for making accurate crosscuts and miter joints at specific angles."
+  },
+  {
+    "id": "table-saw",
+    "en": "table saw",
+    "ru": "распиловочный станок",
+    "info": "A woodworking tool consisting of a circular saw blade, mounted on an arbor, that is driven by an electric motor."
+  },
+  {
+    "id": "wood-router",
+    "en": "wood router",
+    "ru": "фрезер по дереву",
+    "info": "A power tool used to rout out (hollow out) an area, create decorative edges, or cut profiles in wood."
+  },
+  {
+    "id": "f-clamp-bar-clamp",
+    "en": "f-clamp / bar clamp",
+    "ru": "струбцина F-образная",
+    "info": "A slider-operating clamp used to hold wood pieces tightly together during gluing or assembly."
+  },
+  {
+    "id": "wood-mallet",
+    "en": "wood mallet",
+    "ru": "киянка",
+    "info": "A wooden-headed hammer used to strike chisels or assemble wood joints without marring the timber."
+  },
+  {
+    "id": "marking-gauge",
+    "en": "marking gauge",
+    "ru": "рейсмус (ручной)",
+    "info": "A traditional tool used to scribe a line parallel to a reference edge or surface for precise joinery."
+  },
+  {
+    "id": "japanese-pull-saw-ryoba",
+    "en": "japanese pull saw / ryoba",
+    "ru": "японская пила",
+    "info": "A handsaw that cuts on the pull stroke, allowing for a thinner blade and cleaner, more precise cuts."
+  },
+  {
+    "id": "coping-saw",
+    "en": "coping saw",
+    "ru": "лобзик ручной",
+    "info": "A saw with a thin, flexible blade tensioned in a C-shaped steel frame, used for cutting intricate external shapes and interior cutouts."
+  },
+  {
+    "id": "combination-square",
+    "en": "combination square",
+    "ru": "комбинированный угольник",
+    "info": "A woodworking rule with an interchangeable head used for laying out 45-degree and 90-degree angles and measuring depths."
+  },
+  {
+    "id": "block-plane",
+    "en": "block plane",
+    "ru": "торцовочный рубанок",
+    "info": "A small, handheld plane designed to cut end-grain and clean up sharp edges or small high spots."
+  },
+  {
+    "id": "cabinet-scraper-card-scraper",
+    "en": "cabinet scraper / card scraper",
+    "ru": "цикля",
+    "info": "A flat piece of steel used to scrape away microscopic shavings of wood to achieve a glass-smooth finish."
+  }
+]

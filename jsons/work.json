@@ -1,0 +1,62 @@
+[
+  {
+    "id": "akamai",
+    "name": "Akamai",
+    "url": "https://control.akamai.com/apps/auth/?TARGET_URL=Y29udHJvbC5ha2FtYWkuY29tL2FwcHMvZmFzdC1wdXJnZS8=#/login"
+  },
+  {
+    "id": "aws",
+    "name": "AWS",
+    "url": "https://819382988742.signin.aws.amazon.com/console"
+  },
+  {
+    "id": "adobe-release",
+    "name": "Adobe release",
+    "url": "https://developer.adobe.com/console/projects"
+  },
+  {
+    "id": "streamline-staging",
+    "name": "StreamLine staging",
+    "url": "https://streamline-stage.brightline.tv"
+  },
+  {
+    "id": "streamline-prod",
+    "name": "StreamLine Prod",
+    "url": "https://streamline.brightline.tv"
+  },
+  {
+    "id": "html-integrations",
+    "name": "HTML integrations",
+    "url": "https://cdn-media.brightline.tv/sdk/gen2/guides/webkit.html"
+  },
+  {
+    "id": "monday",
+    "name": "Monday",
+    "url": "https://brightline-finance.monday.com/boards/357124336/views/43741756?filter=XQAAAALHAAAAAAAAAABBqgnnA01l8tX8JMxiT40IU65QEUU8ks0LlP7AF3L0U2FNpM8WSjkbogwGoErJ4xJh027nap_Uu9FeqYCT8KcuGtrYrEAxeQXfB33odU0Vo_49cFbb-rA8duN2jaMM3K203XFVPg6mTYlIDcTZ_8D2ecHN6_k12MQHR-bTPRLyAV2QU2I7sER4d-1861SwfYUZuHKAEnxh2s8ZgpzXUoVFBiiDT5__bZqAAA"
+  },
+  {
+    "id": "brightlink-swagger",
+    "name": "BrightLink Swagger",
+    "url": "https://ssp.api.brightline-dev.com/swagger/index.html"
+  },
+  {
+    "id": "ibis",
+    "name": "ibis",
+    "url": "https://ibis.comcast.com/app-dev-tool/devices/list"
+  },
+  {
+    "id": "suitest",
+    "name": "Suitest",
+    "url": "https://the.suite.st/login"
+  },
+  {
+    "id": "heroicons",
+    "name": "heroicons",
+    "url": "https://heroicons.com/"
+  },
+  {
+    "id": "tailgrid",
+    "name": "Tailgrid",
+    "url": "https://tailgrids.com/"
+  }
+]
