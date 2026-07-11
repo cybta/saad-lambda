@@ -1,7 +1,8 @@
 import { getPersonalLinks } from './modules/useful-links/personal.js';
 import { getWorkLinks } from './modules/useful-links/work.js';
+import { threeDPrinting } from './modules/useful-links/threeDPrinting.js';
 
-export const handler = async (event) => {
+export const handler = async (event : any) => {
   // rawPath is for HTTP APIs, path is for REST APIs
   const path = event.rawPath || event.path || '';
 
@@ -12,6 +13,8 @@ export const handler = async (event) => {
       result = await getPersonalLinks();
     } else if (path.includes('/useful-links/work')) {
       result = await getWorkLinks();
+    } else if (path.includes('/useful-links/3d-printing')) {
+      result = await threeDPrinting();
     } else {
       return {
         statusCode: 404,
