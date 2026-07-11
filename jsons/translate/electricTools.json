@@ -1,60 +1,70 @@
 [
   {
     "id": "cable-wire",
+    "ordinality": 1,
     "en": "cable / wire",
     "ru": "кабель / провод",
     "info": "Conductors used to transmit electrical power or signals. (e.g., VVG-NG in Russia)."
   },
   {
     "id": "electrical-tape",
+    "ordinality": 2,
     "en": "electrical tape",
     "ru": "изолента",
     "info": "Pressure-sensitive tape used to insulate electrical wires and other materials that conduct electricity."
   },
   {
     "id": "socket-outlet",
+    "ordinality": 3,
     "en": "socket / outlet",
     "ru": "розетка",
     "info": "A female electrical connector that allows plug-in devices to connect to the primary power supply."
   },
   {
     "id": "light-switch",
+    "ordinality": 4,
     "en": "light switch",
     "ru": "выключатель",
     "info": "A component used to break or connect the electrical circuit, turning lights or devices on and off."
   },
   {
     "id": "junction-box",
+    "ordinality": 5,
     "en": "junction box",
     "ru": "распаячная коробка / подрозетник",
     "info": "An enclosure housing electrical connections, protecting the wires and preventing shorts."
   },
   {
     "id": "circuit-breaker",
+    "ordinality": 6,
     "en": "circuit breaker",
     "ru": "автоматический выключатель / автомат",
     "info": "An automatically operated electrical switch designed to protect a circuit from damage caused by excess current."
   },
   {
     "id": "wire-nut-terminal-block",
+    "ordinality": 7,
     "en": "wire nut / terminal block",
     "ru": "клеммник / клемма WAGO",
     "info": "Connectors used to safely join two or more electrical wires together without soldering."
   },
   {
     "id": "heat-shrink-tubing",
+    "ordinality": 8,
     "en": "heat shrink tubing",
     "ru": "термоусадочная трубка / термоусадка",
     "info": "A shrinkable plastic tube used to insulate wires, providing abrasion resistance and environmental protection."
   },
   {
     "id": "cable-tie-zip-tie",
+    "ordinality": 9,
     "en": "cable tie / zip tie",
     "ru": "стяжка для кабеля / хомут",
     "info": "A type of fastener for holding items together, primarily electrical cables and wires."
   },
   {
     "id": "plug",
+    "ordinality": 10,
     "en": "plug",
     "ru": "вилка",
     "info": "A male electrical connector with pins that fit into a socket to provide power to an appliance."

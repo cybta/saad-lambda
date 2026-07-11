@@ -1,41 +1,49 @@
 [
   {
     "id": "maker-world",
+    "ordinality": 1,
     "name": "Maker World",
     "url": "https://makerworld.com/en"
   },
   {
     "id": "printables",
+    "ordinality": 2,
     "name": "Printables",
     "url": "https://www.printables.com/"
   },
   {
     "id": "thingiverse",
+    "ordinality": 3,
     "name": "Thingiverse",
     "url": "https://www.thingiverse.com/"
   },
   {
     "id": "calibration",
+    "ordinality": 4,
     "name": "Calibration",
     "url": "https://ellis3dp.com/Print-Tuning-Guide/articles/extruder_calibration.html"
   },
   {
     "id": "my-mini-factory",
+    "ordinality": 5,
     "name": "My mini factory",
     "url": "https://www.myminifactory.com/"
   },
   {
     "id": "cults-3d",
+    "ordinality": 6,
     "name": "Cults 3D",
     "url": "https://cults3d.com/"
   },
   {
     "id": "yeggi",
+    "ordinality": 7,
     "name": "Yeggi",
     "url": "https://www.yeggi.com"
   },
   {
     "id": "pinshape",
+    "ordinality": 8,
     "name": "Pinshape",
     "url": "https://pinshape.com/"
   }

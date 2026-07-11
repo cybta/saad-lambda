@@ -38,10 +38,11 @@ export const appendJsonItem = async (
 ) => {
   const items: Array<Record<string, unknown>> = (await getJsonFromS3(filePath)) ?? [];
   const existingIds = new Set(items.map((existing) => String(existing.id)));
-  const { id: _ignoredClientId, ...rest } = item;
+  const { id: _ignoredClientId, ordinality: _ignoredClientOrdinality, ...rest } = item;
   const id = generateUniqueId(existingIds, slugify(String(item[idSourceField] ?? '')));
+  const ordinality = items.reduce((max, existing) => Math.max(max, Number(existing.ordinality) || 0), 0) + 1;
 
-  const newItem = { id, ...rest };
+  const newItem = { id, ordinality, ...rest };
   await putJsonToS3(filePath, [...items, newItem]);
   return newItem;
 };

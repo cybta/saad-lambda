@@ -1,102 +1,119 @@
 [
   {
     "id": "oak",
+    "ordinality": 1,
     "en": "oak",
     "ru": "дуб",
     "info": "Hardwood, highly durable and rot-resistant. Used for flooring and heavy construction."
   },
   {
     "id": "birch",
+    "ordinality": 2,
     "en": "birch",
     "ru": "берёза",
     "info": "Hardwood, incredibly common in Russia. Uniform texture, excellent for plywood and furniture."
   },
   {
     "id": "pine",
+    "ordinality": 3,
     "en": "pine",
     "ru": "сосна",
     "info": "Softwood, widely used in Russian construction. Easy to work with and resinous."
   },
   {
     "id": "larch",
+    "ordinality": 4,
     "en": "larch",
     "ru": "лиственница",
     "info": "Softwood, highly valued in Russia for its extreme water resistance and durability."
   },
   {
     "id": "spruce",
+    "ordinality": 5,
     "en": "spruce",
     "ru": "ель",
     "info": "Softwood, lightweight and resonant. Commonly used for general lumber and musical instruments."
   },
   {
     "id": "mdf-medium-density-fireboard",
+    "ordinality": 6,
     "en": "MDF (Medium-Density Fireboard)",
     "ru": "МДФ",
     "info": "Engineered wood composite made from wood fibers. Smooth surface, easy to machine and paint, used for furniture and doors."
   },
   {
     "id": "moisture-resistant-mdf",
+    "ordinality": 7,
     "en": "moisture-resistant MDF",
     "ru": "влагостойкий МДФ",
     "info": "MDF treated with special resins (often tinted green in core) for use in humid environments like bathrooms and kitchens."
   },
   {
     "id": "lmdf-laminated-mdf",
+    "ordinality": 8,
     "en": "LMDF (Laminated MDF)",
     "ru": "ЛМДФ",
     "info": "Medium-density fiberboard coated with a decorative melamine film. Widely used for premium furniture facades."
   },
   {
     "id": "chipboard-particleboard",
+    "ordinality": 9,
     "en": "Chipboard / Particleboard",
     "ru": "ДСП",
     "info": "Low-cost engineered wood made from wood chips and resin pressed together. Standard material for budget cabinetry."
   },
   {
     "id": "ldsp-laminated-chipboard",
+    "ordinality": 10,
     "en": "LDSP (Laminated Chipboard)",
     "ru": "ЛДСП",
     "info": "Melamine-faced particleboard. The most common material for carcass furniture, kitchen cabinets, and wardrobes in Russia."
   },
   {
     "id": "moisture-resistant-ldsp",
+    "ordinality": 11,
     "en": "Moisture-resistant LDSP",
     "ru": "влагостойкий ЛДСП",
     "info": "Particleboard made with moisture-resistant resins (usually has a green core). Used for kitchen countertops and bathroom vanities."
   },
   {
     "id": "plywood",
+    "ordinality": 12,
     "en": "Plywood",
     "ru": "фанера",
     "info": "Sheet material manufactured from thin layers of rotary-cut wood veneer glued together with alternating grain direction."
   },
   {
     "id": "fk-plywood-interior-grade",
+    "ordinality": 13,
     "en": "FK Plywood (Interior grade)",
     "ru": "фанера ФК",
     "info": "Moisture-resistant plywood bonded with urea-formaldehyde glue. Safe for interior furniture, wall sheathing, and eco-friendly projects."
   },
   {
     "id": "fsf-plywood-exterior-grade",
+    "ordinality": 14,
     "en": "FSF Plywood (Exterior grade)",
     "ru": "фанера ФСФ",
     "info": "Highly water-resistant plywood bonded with phenol-formaldehyde glue. Toxic for indoor use, designed for outdoor construction and roofing."
   },
   {
     "id": "film-faced-plywood-laminated-plywood",
+    "ordinality": 15,
     "en": "Film faced plywood / Laminated plywood",
     "ru": "ламинированная фанера",
     "info": "FSF plywood coated with a protective plastic or resin film. Highly water-resistant, heavily used for concrete formwork and truck flooring."
   },
   {
     "id": "osb-oriented-strand-board",
+    "ordinality": 16,
     "en": "OSB (Oriented Strand Board)",
     "ru": "ОСП / ОСБ",
     "info": "Engineered wood particle board formed by adding adhesives and then compressing layers of wood strands in specific orientations."
   },
   {
     "id": "fibreboard-hardboard",
+    "ordinality": 17,
     "en": "Fibreboard / Hardboard",
     "ru": "ДВП / Оргалит",
     "info": "Thin, dense sheet material often used for the back walls of cabinet furniture and drawer bottoms."

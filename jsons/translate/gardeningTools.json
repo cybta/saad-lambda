@@ -1,90 +1,105 @@
 [
   {
     "id": "spade-digging-shovel",
+    "ordinality": 1,
     "en": "spade / digging shovel",
     "ru": "штыковая лопата",
     "info": "Flat, sharp-edged shovel designed for cutting roots, digging tough soil, and trenching."
   },
   {
     "id": "scoop-shovel",
+    "ordinality": 2,
     "en": "scoop shovel",
     "ru": "совковая лопата",
     "info": "Broad, deep-bladed shovel with curved sides, perfect for moving loose materials like sand, gravel, or snow."
   },
   {
     "id": "rake",
+    "ordinality": 3,
     "en": "rake",
     "ru": "грабли",
     "info": "Used for collecting leaves, hay, or loosening and leveling the surface of the soil."
   },
   {
     "id": "pruning-shears-secateurs",
+    "ordinality": 4,
     "en": "pruning shears / secateurs",
     "ru": "секатор",
     "info": "Heavy-duty scissors used for cutting back small branches, shrubs, and plants."
   },
   {
     "id": "lopper",
+    "ordinality": 5,
     "en": "lopper",
     "ru": "сучкорез",
     "info": "A type of scissors used for pruning twigs and small branches, featuring long handles to provide leverage."
   },
   {
     "id": "wheelbarrow",
+    "ordinality": 6,
     "en": "wheelbarrow",
     "ru": "тачка",
     "info": "Small hand-propelled vehicle designed to carry loads over short distances."
   },
   {
     "id": "garden-hoe",
+    "ordinality": 7,
     "en": "garden hoe",
     "ru": "тяпка / мотыга",
     "info": "An ancient and versatile agricultural hand tool used to shape soil, remove weeds, and clear soil."
   },
   {
     "id": "watering-can",
+    "ordinality": 8,
     "en": "watering can",
     "ru": "лейка",
     "info": "A portable container, usually with a handle and a funnel, used to water plants by hand."
   },
   {
     "id": "garden-hose",
+    "ordinality": 9,
     "en": "garden hose",
     "ru": "садовый шланг",
     "info": "A flexible tube used to convey water for gardening, lawn care, and other landscaping purposes."
   },
   {
     "id": "spray-nozzle",
+    "ordinality": 10,
     "en": "spray nozzle",
     "ru": "пистолет для полива / распылитель",
     "info": "An adjustable attachment for a garden hose that controls water pressure and spray patterns."
   },
   {
     "id": "hand-trowel",
+    "ordinality": 11,
     "en": "hand trowel",
     "ru": "садовый совок",
     "info": "A small handheld tool with a curved blade used for digging small holes, planting bulbs, and weeding."
   },
   {
     "id": "pitchfork",
+    "ordinality": 12,
     "en": "pitchfork",
     "ru": "вилы",
     "info": "A tool with a long handle and sharp, widely spaced prongs used for lifting and pitching hay, leaves, or manure."
   },
   {
     "id": "sickle",
+    "ordinality": 13,
     "en": "sickle",
     "ru": "серп",
     "info": "A hand-held agricultural tool with a variously curved blade typically used for harvesting grain crops or cutting grass."
   },
   {
     "id": "lawn-mower",
+    "ordinality": 14,
     "en": "lawn mower",
     "ru": "газонокосилка",
     "info": "A machine utilizing one or more revolving blades to cut a grass surface to an even height."
   },
   {
     "id": "string-trimmer-weed-whacker",
+    "ordinality": 15,
     "en": "string trimmer / weed whacker",
     "ru": "триммер",
     "info": "A powered handheld tool that uses a whirling monofilament line instead of a blade for cutting grass and weeds near obstacles."
