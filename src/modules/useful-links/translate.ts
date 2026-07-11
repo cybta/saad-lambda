@@ -1,4 +1,4 @@
-import { getJsonFromS3, appendJsonItem } from '../../services/s3Service.js';
+import { getJsonFromS3, appendJsonItem, updateJsonItem, deleteJsonItem } from '../../services/s3Service.js';
 
 export const TRANSLATE_CATEGORIES = [
   'electricTools',
@@ -26,4 +26,16 @@ export const addTranslateItem = async (
   item: { en: string; ru: string; info: string }
 ) => {
   return await appendJsonItem(`useful-links/translate/${category}.json`, 'en', item);
+};
+
+export const updateTranslateItem = async (
+  category: TranslateCategory,
+  id: string,
+  updates: Record<string, unknown>
+) => {
+  return await updateJsonItem(`useful-links/translate/${category}.json`, id, updates);
+};
+
+export const deleteTranslateItem = async (category: TranslateCategory, id: string) => {
+  return await deleteJsonItem(`useful-links/translate/${category}.json`, id);
 };

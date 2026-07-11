@@ -45,3 +45,29 @@ export const appendJsonItem = async (
   await putJsonToS3(filePath, [...items, newItem]);
   return newItem;
 };
+
+export const updateJsonItem = async (
+  filePath: string,
+  id: string,
+  updates: Record<string, unknown>
+) => {
+  const items: Array<Record<string, unknown>> = (await getJsonFromS3(filePath)) ?? [];
+  const index = items.findIndex((existing) => existing.id === id);
+  if (index === -1) return null;
+
+  const { id: _ignoredClientId, ...rest } = updates;
+  const updatedItem = { ...items[index], ...rest };
+  items[index] = updatedItem;
+  await putJsonToS3(filePath, items);
+  return updatedItem;
+};
+
+export const deleteJsonItem = async (filePath: string, id: string) => {
+  const items: Array<Record<string, unknown>> = (await getJsonFromS3(filePath)) ?? [];
+  const index = items.findIndex((existing) => existing.id === id);
+  if (index === -1) return false;
+
+  items.splice(index, 1);
+  await putJsonToS3(filePath, items);
+  return true;
+};

@@ -33,6 +33,21 @@ export class SaadApiStack extends Stack {
       sameEnvironment: true,
     });
 
+    // A single wildcard permission for the whole API, instead of apigateway.LambdaIntegration's
+    // default of two Lambda::Permission statements per method (one per stage + one for the
+    // console "Test" button). That default blows past the 20KB Lambda resource-policy size
+    // limit once you have more than ~15 methods. One statement covers all current and future
+    // routes/methods/stages on this API.
+    existingLambda.addPermission('ApiGatewayInvoke', {
+      principal: new iam.ServicePrincipal('apigateway.amazonaws.com'),
+      sourceArn: existingApi.arnForExecuteApi(),
+    });
+    const lambdaIntegration = new apigateway.Integration({
+      type: apigateway.IntegrationType.AWS_PROXY,
+      integrationHttpMethod: 'POST',
+      uri: `arn:aws:apigateway:${this.region}:lambda:path/2015-03-31/functions/${existingLambda.functionArn}/invocations`,
+    });
+
     // Writes to S3 now go through the Lambda's own IAM permission rather than the
     // bucket's public write grant (being locked down separately). Grant is scoped to
     // the useful-links/ prefix only.
@@ -51,20 +66,37 @@ export class SaadApiStack extends Stack {
     // adding a route via addRoute below automatically produces a new deployment on `cdk deploy`.
     const deployment = new apigateway.Deployment(this, 'Deployment', { api: existingApi });
 
+    // Edit/delete a single item by id: /useful-links/{route}/{id}
+    const addItemRoutes = (resource: apigateway.IResource) => {
+      const itemResource = resource.addResource('{id}');
+      const patchMethod = itemResource.addMethod('PATCH', lambdaIntegration, { apiKeyRequired: true });
+      const deleteMethod = itemResource.addMethod('DELETE', lambdaIntegration, { apiKeyRequired: true });
+      deployment.node.addDependency(patchMethod);
+      deployment.node.addDependency(deleteMethod);
+      deployment.addToLogicalId({ method: patchMethod.methodId });
+      deployment.addToLogicalId({ method: deleteMethod.methodId });
+
+      const corsOptions = itemResource.addCorsPreflight({
+        allowOrigins: ['*'],
+        allowMethods: ['PATCH', 'DELETE', 'OPTIONS'],
+      });
+      deployment.node.addDependency(corsOptions);
+    };
+
     const addRoute = (pathPart: string, options: { post?: boolean } = {}) => {
       const resource = usefulLinksResource.addResource(pathPart);
-      const getMethod = resource.addMethod('GET', new apigateway.LambdaIntegration(existingLambda));
+      const getMethod = resource.addMethod('GET', lambdaIntegration);
       deployment.node.addDependency(getMethod);
       deployment.addToLogicalId({ method: getMethod.methodId });
 
       const corsAllowMethods = ['GET', 'OPTIONS'];
       if (options.post) {
-        const postMethod = resource.addMethod('POST', new apigateway.LambdaIntegration(existingLambda), {
-          apiKeyRequired: true,
-        });
+        const postMethod = resource.addMethod('POST', lambdaIntegration, { apiKeyRequired: true });
         deployment.node.addDependency(postMethod);
         deployment.addToLogicalId({ method: postMethod.methodId });
         corsAllowMethods.splice(1, 0, 'POST');
+
+        addItemRoutes(resource);
       }
 
       const corsOptions = resource.addCorsPreflight({
@@ -80,26 +112,26 @@ export class SaadApiStack extends Stack {
       addRoute(category, { post: true });
     }
     // GET-only: /useful-links/translate combines the 5 category files above, so
-    // there's no single file to append to.
+    // there's no single file to append to (and no single item to PATCH/DELETE either).
     addRoute('translate');
 
     // personal/work resources+GET+OPTIONS remain manually-managed (per the minimal-import
-    // strategy) - only the new POST method is added here, same additive pattern as addRoute.
-    const addPostMethod = (constructIdPrefix: string, resourceId: string, path: string) => {
+    // strategy) - only the new POST/{id} methods are added here, same additive pattern as addRoute.
+    const addWriteMethods = (constructIdPrefix: string, resourceId: string, path: string) => {
       const resource = apigateway.Resource.fromResourceAttributes(this, `${constructIdPrefix}Resource`, {
         restApi: existingApi,
         resourceId,
         path,
       });
-      const postMethod = resource.addMethod('POST', new apigateway.LambdaIntegration(existingLambda), {
-        apiKeyRequired: true,
-      });
+      const postMethod = resource.addMethod('POST', lambdaIntegration, { apiKeyRequired: true });
       deployment.node.addDependency(postMethod);
       deployment.addToLogicalId({ method: postMethod.methodId });
+
+      addItemRoutes(resource);
     };
 
-    addPostMethod('Personal', PERSONAL_RESOURCE_ID, '/useful-links/personal');
-    addPostMethod('Work', WORK_RESOURCE_ID, '/useful-links/work');
+    addWriteMethods('Personal', PERSONAL_RESOURCE_ID, '/useful-links/personal');
+    addWriteMethods('Work', WORK_RESOURCE_ID, '/useful-links/work');
 
     // The one live resource this stack adopts via `cdk import`, so it can flip
     // the "prod" stage over to the new deployment without recreating it.
