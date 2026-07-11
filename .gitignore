@@ -1,5 +1,6 @@
 node_modules
 .env
+.claude
 infra/cdk.out
 infra/dist
 API_REFERENCE.md
