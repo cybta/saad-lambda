@@ -6,6 +6,7 @@ import {
   updateThreeDPrintingLink,
   deleteThreeDPrintingLink,
 } from './modules/useful-links/threeDPrinting.js';
+import { getNotes, addNote, updateNote, deleteNote } from './modules/useful-links/notes.js';
 import {
   TRANSLATE_CATEGORIES,
   getAllTranslations,
@@ -49,6 +50,13 @@ const LINK_ROUTES: Record<
     update: updateThreeDPrintingLink,
     remove: deleteThreeDPrintingLink,
     requiredFields: ['name', 'url'],
+  },
+  notes: {
+    get: getNotes,
+    add: addNote,
+    update: updateNote,
+    remove: deleteNote,
+    requiredFields: ['title', 'desc'],
   },
 };
 

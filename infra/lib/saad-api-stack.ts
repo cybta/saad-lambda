@@ -108,6 +108,7 @@ export class SaadApiStack extends Stack {
 
     // POST-enabled: a single JSON array backs each of these directly.
     addRoute('3d-printing', { post: true });
+    addRoute('notes', { post: true });
     for (const category of TRANSLATE_CATEGORIES) {
       addRoute(category, { post: true });
     }
